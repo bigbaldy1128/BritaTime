@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
         editor.putString("date_time", data);
         editor.commit();
-        timeView1.setLeftDay(30);
+        timeView1.setLeftDay(TimeView.TOTAL_TIME);
         timeView1.invalidate();
     }
 
@@ -55,6 +55,6 @@ public class MainActivity extends AppCompatActivity {
         Date now=new Date();
         long diff = now.getTime() - start.getTime();
         long days = diff / (1000 * 60 * 60 * 24);
-        return 30-days;
+        return TimeView.TOTAL_TIME-days;
     }
 }

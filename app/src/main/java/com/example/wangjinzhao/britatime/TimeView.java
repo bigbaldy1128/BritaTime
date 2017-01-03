@@ -15,9 +15,9 @@ import android.view.View;
  * Created by wangjinzhao on 2016/7/29.
  */
 public class TimeView extends View {
-
+    final static int TOTAL_TIME = 50;
+    long leftDay = 0;
     Context context;
-    long leftDay;
     Paint paint = new Paint();
     Paint textPaint = new Paint();
     Rect rect = new Rect();
@@ -35,7 +35,7 @@ public class TimeView extends View {
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onDraw(Canvas canvas) {
-        long Y = canvas.getHeight() * leftDay / 30;
+        long Y = canvas.getHeight() * leftDay / TOTAL_TIME;
         canvas.getClipBounds(rect);
         canvas.drawRect(rect.left, rect.bottom - Y, rect.right, rect.bottom, paint);
 
